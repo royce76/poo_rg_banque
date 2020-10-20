@@ -7,10 +7,10 @@
   }
 ?>
 <?php
-  session_start();
-  if (!isset($_SESSION["user_info"]) && empty($_SESSION["user_info"])) {
-    header("Location: userConnection.php");
-  }
+  // session_start();
+  // if (!isset($_SESSION["user_info"]) && empty($_SESSION["user_info"])) {
+  //   header("Location: userConnection.php");
+  // }
   // if (isset($_POST["deconnexion"])) {
   //   session_destroy();
   //   header("Location: connexion.php");

@@ -25,8 +25,8 @@ class UserManager {
     $query->execute([
       "email" => $user->getEmail()
     ]);
-    $user_email = $query->fetchAll(PDO::FETCH_CLASS, "User");
-    return $user_email;
+    $user_info = $query->fetchAll(PDO::FETCH_CLASS, "User");
+    return $user_info;
   }
 
 }
