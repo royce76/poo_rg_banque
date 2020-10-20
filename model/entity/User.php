@@ -7,7 +7,7 @@ class User
   // le sexe est une constante
   const SEX = ["h", "f"];
   //on récupère les champs de la table user en propritété
-  protected int $id;
+  protected ?int $id;
   protected string $lastname;
   protected string $firstname;
   protected string $email;
@@ -18,7 +18,7 @@ class User
   protected string $password;
   protected string $birth_date;
 
-  public function setId(int $id):self {
+  public function setId(int $id = null):self {
     $this->id = $id;
     return $this;
   }

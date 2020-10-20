@@ -1,7 +1,7 @@
 <?php
-include 'view/template/nav.php';
-include 'view/template/header.php';
+require 'view/template/nav.php';
+require 'view/template/header.php';
 ?>
 <?php
-include 'view/template/footer.php';
+require 'view/template/footer.php';
 ?>
