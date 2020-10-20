@@ -16,6 +16,7 @@ class User
   protected string $adress;
   protected string $sex;
   protected string $password;
+  protected string $birth_date;
 
   public function setId(int $id):self {
     $this->id = $id;
@@ -98,6 +99,15 @@ class User
 
   public function getSex() {
     return $this->sex;
+  }
+
+  public function setBirth_date(string $birth_date):self {
+    $this->birth_date = $birth_date;
+    return $this;
+  }
+
+  public function getBirth_date() {
+    return $this->birth_date;
   }
 
   public function hydrate(array $data) {
