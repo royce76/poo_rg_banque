@@ -2,7 +2,7 @@
 /**
  *
  */
- session_start();
+ // session_start();
 class Account
 {
   const ACCOUNT_TYPE = [
@@ -14,13 +14,13 @@ class Account
     "Lep"
   ];
 
-  protected int $id;
-  protected float $amount;
-  protected string $opening_date;
+  protected ?int $id;
+  protected ?float $amount;
+  protected ?string $opening_date;
   protected string $account_type;
-  protected int $user_id;
+  protected ?int $user_id;
 
-  public function setId(int $id):self {
+  public function setId(int $id = null):self {
     $this->id = $id;
     return $this;
   }
@@ -29,7 +29,7 @@ class Account
     return $this->id;
   }
 
-  public function setAmount(float $amount):self {
+  public function setAmount(float $amount = null):self {
     $this->amount = $amount;
     return $this;
   }
@@ -38,7 +38,7 @@ class Account
     return $this->amount;
   }
 
-  public function setOpeningDate(string $opening_date):self {
+  public function setOpeningDate(string $opening_date = null):self {
     $this->opening_date = $opening_date;
     return $this;
   }
@@ -58,7 +58,7 @@ class Account
     return $this->account_type;
   }
 
-  public function setUserId(int $id_user):self {
+  public function setUserId(int $id_user = null):self {
     $id_user = $_SESSION["user_id"];
     $this->user_id = $id_user;
     return $this;
