@@ -21,22 +21,22 @@ class Operation
     return $this->id;
   }
 
-  public function setOperation_type(string $operation_type):self {
+  public function setOperationType(string $operation_type):self {
     $this->operation_type = $operation_type;
     return $this;
   }
 
-  public function getOperation_type() {
+  public function getOperationType() {
     return $this->operation_type;
   }
 
-  public function setAmount(float $amount):self {
-    $this->amount = $amount;
+  public function setAmountO(float $amountO):self {
+    $this->amountO = $amountO;
     return $this;
   }
 
-  public function getAmount() {
-    return $this->amount;
+  public function getAmountO() {
+    return $this->amountO;
   }
 
   public function setRegistered(string $registered):self {
@@ -57,12 +57,12 @@ class Operation
     return $this->label;
   }
 
-  public function setAccount_id(int $account_id):self {
+  public function setAccountId(int $account_id):self {
     $this->account_id = $account_id;
     return $this;
   }
 
-  public function getAccount_id() {
+  public function getAccountId() {
     return $this->account_id;
   }
 

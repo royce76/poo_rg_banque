@@ -15,7 +15,7 @@ class Account
   ];
 
   protected int $id;
-  protected float $a_amount;
+  protected float $amountA;
   protected string $opening_date;
   protected string $account_type;
   protected int $user_id;
@@ -29,13 +29,13 @@ class Account
     return $this->id;
   }
 
-  public function setA_amount(float $a_amount):self {
-    $this->a_amount = $a_amount;
+  public function setAmountA(float $amountA):self {
+    $this->amountA = $amountA;
     return $this;
   }
 
-  public function getA_amount() {
-    return $this->a_amount;
+  public function getAmountA() {
+    return $this->amountA;
   }
 
   public function setOpeningDate(string $opening_date):self {
@@ -47,24 +47,23 @@ class Account
     return $this->opening_date;
   }
 
-  public function setAccount_type(string $account_type):self {
+  public function setAccountType(string $account_type):self {
     if (in_array($account_type,self::ACCOUNT_TYPE)) {
       $this->account_type = $account_type;
     }
     return $this;
   }
 
-  public function getAccount_type() {
+  public function getAccountType() {
     return $this->account_type;
   }
 
-  public function setUser_id(int $id_user):self {
-    $id_user = $_SESSION["user_id"];
-    $this->user_id = $id_user;
+  public function setUserId(int $user_id):self {
+    $this->user_id = $user_id;
     return $this;
   }
 
-  public function getUser_id() {
+  public function getUserId() {
     return $this->user_id;
   }
 

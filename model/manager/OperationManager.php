@@ -16,9 +16,10 @@ class OperationManager
     return $this->_db;
   }
 
+  //use to show all operations from the account'user in showaccount.php
   public function showOperations(){
     $query = $this->getDb()->prepare(
-      "SELECT o.operation_type, o.amount, o.registered, o.label
+      "SELECT o.operation_type, o.amount AS amountO, o.registered, o.label
       FROM Account AS a
       INNER JOIN Operation AS o
       WHERE a.id = o.account_id AND a.id = :account_id"

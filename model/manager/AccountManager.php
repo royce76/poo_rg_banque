@@ -20,9 +20,10 @@ class AccountManager
     return $this->_db;
   }
 
+  //use in index.php to show all accounts from user
   public function showAccounts() {
     $query = $this->getDb()->prepare (
-      "SELECT a.id, a.amount AS a_amount, a.opening_date, a.account_type, a.user_id
+      "SELECT a.id, a.amount AS amountA, a.opening_date, a.account_type, a.user_id
       FROM Account AS a
       WHERE a.user_id = :user_id"
     );
@@ -34,9 +35,10 @@ class AccountManager
     return $accounts;
   }
 
+  //use in showaccount.php to echo account's user
   public function accountSingle() {
     $con = $this->getDb()->prepare(
-      "SELECT a.amount AS a_amount, a.opening_date, a.account_type
+      "SELECT a.amount AS amountA, a.opening_date, a.account_type
       FROM Account AS a
       WHERE a.id = :id_account"
     );
