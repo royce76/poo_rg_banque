@@ -18,7 +18,8 @@ class UserManager {
     return $this->_db;
   }
 
-  public function checkUser(User $user) {
+  //use to get information from user to connect to website
+  public function userInfo(User $user) {
     $query = $this->getDb()->prepare(
       "SELECT * FROM User WHERE email= :email"
     );

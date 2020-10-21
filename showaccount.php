@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'model/connection/Connexion.php';
+require 'model/connection/Connection.php';
 require 'model/entity/Account.php';
 require 'model/manager/AccountManager.php';
 

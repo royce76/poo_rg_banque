@@ -7,7 +7,7 @@ class User
   // le sexe est une constante
   const SEX = ["h", "f"];
   //on récupère les champs de la table user en propritété
-  protected ?int $id;
+  protected int $id;
   protected string $lastname;
   protected string $firstname;
   protected string $email;
@@ -18,7 +18,7 @@ class User
   protected string $password;
   protected string $birth_date;
 
-  public function setId(int $id = null):self {
+  public function setId(int $id):self {
     $this->id = $id;
     return $this;
   }
@@ -63,12 +63,12 @@ class User
     return $this->city;
   }
 
-  public function setCity_code(int $city_code):self {
+  public function setCityCode(int $city_code):self {
     $this->city_code = $city_code;
     return $this;
   }
 
-  public function getCity_code() {
+  public function getCityCode() {
     return $this->city_code;
   }
 
@@ -101,12 +101,12 @@ class User
     return $this->sex;
   }
 
-  public function setBirth_date(string $birth_date):self {
+  public function setBirthDate(string $birth_date):self {
     $this->birth_date = $birth_date;
     return $this;
   }
 
-  public function getBirth_date() {
+  public function getBirthDate() {
     return $this->birth_date;
   }
 

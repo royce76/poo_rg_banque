@@ -9,11 +9,11 @@ require 'view/template/header.php';
     <div class="row">
       <div class="card col-10 col-md-5 mx-auto my-4" style="width: 18rem;">
         <div class="card-header">
-          <?= $show_account_single[0]->getAccount_type()?>
+          <?= $show_account_single[0]->getAccountType()?>
         </div>
         <ul class="list-group list-group-flush">
           <?php foreach ($show_account_single as $key => $account): ?>
-            <li class="list-group-item">Votre solde : <?=$account->getA_amount()?> euro</li>
+            <li class="list-group-item">Votre solde : <?=$account->getAmountA()?> euro</li>
             <li class="list-group-item">Enregistré le : <?=$account->getOpeningDate()?></li>
           <?php endforeach; ?>
         </ul>
@@ -31,8 +31,8 @@ require 'view/template/header.php';
         <tbody>
           <?php foreach ($show_operations as $key => $operation): ?>
             <tr>
-              <th scope="row"><?=$operation->getOperation_type()?></th>
-              <td><?=$operation->getAmount()?></td>
+              <th scope="row"><?=$operation->getOperationType()?></th>
+              <td><?=$operation->getAmountO()?></td>
               <td><?=$operation->getRegistered()?></td>
               <td><?=$operation->getLabel()?></td>
             </tr>

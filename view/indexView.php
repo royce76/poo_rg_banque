@@ -9,10 +9,10 @@ require 'view/template/header.php';
     <?php foreach ($accounts_user as $key => $accounts): ?>
       <div class="card col-10 col-md-5 mx-auto my-4" style="width: 18rem;">
         <div class="card-header">
-          <?= $accounts->getAccount_type(); ?>
+          <?= $accounts->getAccountType(); ?>
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">Votre solde : <?= $accounts->getA_amount(); ?></li>
+          <li class="list-group-item">Votre solde : <?= $accounts->getAmountA(); ?></li>
           <li class="list-group-item">Ouvert le : <?= $accounts->getOpeningDate(); ?></li>
           <!-- <li class="list-group-item">Dernière transaction</li>
           <li class="list-group-item">Montant : </li>

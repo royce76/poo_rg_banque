@@ -2,14 +2,15 @@
 session_start();
 if (!isset($_SESSION["user_info"]) && empty($_SESSION["user_info"])) {
   header("Location: userConnection.php");
+  exit();
 }
-require 'model/connection/Connexion.php';
+require 'model/connection/Connection.php';
 require 'model/entity/Account.php';
 require 'model/manager/AccountManager.php';
+require 'model/entity/Operation.php';
 
 
 $account_manager = new AccountManager();
-//On récupère les comptes objets dans un tableau
 $accounts_user = $account_manager->showAccounts();
-
+print_r($accounts_user);
 require 'view/indexView.php';
