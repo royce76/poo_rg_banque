@@ -22,18 +22,9 @@ class AccountManager
 
   public function showAccounts() {
     $query = $this->getDb()->prepare (
-      "SELECT DISTINCT a.id AS a_id, a.amount AS a_amount, a.opening_date, a.account_type, o.operation_type, o.amount AS o_amount, o.registered, o.label
-      FROM User AS u
-      INNER JOIN Account AS a
-      ON u.id = a.user_id AND u.id = :user_id
-      -- show account even there is no operation
-      LEFT JOIN Operation AS o
-      ON a.id = o.account_id
-      WHERE o.id IN (SELECT MAX(o.id)
-      FROM Operation AS o
-      GROUP BY o.account_id)
-      OR a.id NOT IN (SELECT o.account_id
-        FROM Operation AS o)"
+      "SELECT a.id, a.amount AS a_amount, a.opening_date, a.account_type, a.user_id
+      FROM Account AS a
+      WHERE a.user_id = :user_id"
     );
     $result = $query->execute([
       "user_id" => $_SESSION["user_id"]
@@ -41,6 +32,19 @@ class AccountManager
 
     $accounts = $query->fetchAll(PDO::FETCH_CLASS, "Account");
     return $accounts;
+  }
+
+  public function accountSingle() {
+    $con = $this->getDb()->prepare(
+      "SELECT a.amount AS a_amount, a.opening_date, a.account_type
+      FROM Account AS a
+      WHERE a.id = :id_account"
+    );
+    $results = $con->execute([
+      "id_account" => $_GET["id"]
+    ]);
+    $account_user = $con->fetchAll(PDO::FETCH_CLASS, "Account");
+    return $account_user;
   }
 
 }

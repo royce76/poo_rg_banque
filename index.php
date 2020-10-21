@@ -7,9 +7,9 @@ require 'model/connection/Connexion.php';
 require 'model/entity/Account.php';
 require 'model/manager/AccountManager.php';
 
+
 $account_manager = new AccountManager();
 //On récupère les comptes objets dans un tableau
 $accounts_user = $account_manager->showAccounts();
-print_r($accounts_user[0]);
 
 require 'view/indexView.php';
