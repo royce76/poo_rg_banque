@@ -1,20 +1,9 @@
+
 <?php
-  function test_input($data) {
-    $data = trim($data); // remove space of both side
-    $data = stripslashes($data);// remove backslashes
-    $data = htmlspecialchars($data, ENT_QUOTES);//both quotes
-    return $data;
+  if (isset($_POST["deconnexion"])) {
+    session_destroy();
+    header("Location: userconnection.php");
   }
-?>
-<?php
-  // session_start();
-  // if (!isset($_SESSION["user_info"]) && empty($_SESSION["user_info"])) {
-  //   header("Location: userConnection.php");
-  // }
-  // if (isset($_POST["deconnexion"])) {
-  //   session_destroy();
-  //   header("Location: connexion.php");
-  // }
  ?>
 
 <!doctype html>

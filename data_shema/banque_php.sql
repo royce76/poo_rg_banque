@@ -40,10 +40,10 @@ ENGINE=InnoDB;
 
 INSERT INTO Account(amount, opening_date, account_type, user_id)
 VALUES
-(596.23, NOW(), "Compte courant", 1),
-(12345, NOW(), "Livret A", 1),
+(596.23, NOW(), "Compte_Courant", 1),
+(12345, NOW(), "Livret_A", 1),
 (500, NOW(), "PEL", 1),
-(-56.78, NOW(), "Compte courant", 2);
+(-56.78, NOW(), "Compte_Courant", 2);
 
 CREATE TABLE Operation(
   id INT UNSIGNED NOT NULL AUTO_INCREMENT,
