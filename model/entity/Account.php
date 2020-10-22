@@ -1,15 +1,12 @@
 <?php
-/**
- *
- */
- // session_start();
+
 class Account
 {
   const ACCOUNT_TYPE = [
-    "Compte courant",
-    "Livret A",
+    "Compte_Courant",
+    "Livret_A",
     "PEL",
-    "Livret Jeune",
+    "Livret_Jeune",
     "Perp",
     "Lep"
   ];
@@ -30,7 +27,9 @@ class Account
   }
 
   public function setAmountA(float $amountA):self {
-    $this->amountA = $amountA;
+    if ($amountA >= 50) {
+      $this->amountA = $amountA;
+    }
     return $this;
   }
 

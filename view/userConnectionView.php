@@ -32,12 +32,12 @@
           <form class="col-10 mx-auto" action="" method="POST">
             <button type="submit" class="btn btn-primary" name="connexion" value="connexion">Nouveau profil</button>
           </form>
-          <?php if ($empty_entries): ?>
+          <?php if ($empty_entries !== ""): ?>
             <div class="alert alert-warning col-10 mx-auto text-center my-4" role="alert">
               <?=$empty_entries?>
             </div>
           <?php endif; ?>
-          <?php if ($error_entries): ?>
+          <?php if ($error_entries !== ""): ?>
             <div class="alert alert-warning col-10 mx-auto text-center my-4" role="alert">
               <?=$error_entries?>
             </div>

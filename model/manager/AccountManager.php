@@ -49,4 +49,18 @@ class AccountManager
     return $account_user;
   }
 
+  //use in form.php
+  public function addAccount(Account $account) {
+    $query = $this->getDb()->prepare(
+      "INSERT INTO Account(amount,opening_date,account_type,user_id)
+      VALUES(:amount, NOW(), :account_type, :user_id)"
+    );
+    $result = $query->execute([
+      "amount" => $account->getAmountA(),
+      "account_type" => $account->getAccountType(),
+      "user_id" => $_SESSION["user_id"]
+    ]);
+    return TRUE;
+  }
+
 }
