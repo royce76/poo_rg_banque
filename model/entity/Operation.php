@@ -6,11 +6,11 @@
 class Operation
 {
   protected int $id;
-  protected string $operation_type;
+  protected ?string $operation_type;
   protected float $amount;
-  protected string $registered;
+  protected ?string $registered;
   protected ?string $label;
-  protected int $account_id;
+  protected ?int $account_id;
 
   public function setId(int $id):self {
     $this->id = $id;
@@ -21,7 +21,7 @@ class Operation
     return $this->id;
   }
 
-  public function setOperationType(string $operation_type):self {
+  public function setOperationType(string $operation_type = null):self {
     $this->operation_type = $operation_type;
     return $this;
   }
@@ -39,7 +39,7 @@ class Operation
     return $this->amountO;
   }
 
-  public function setRegistered(string $registered):self {
+  public function setRegistered(string $registered = null):self {
     $this->registered = $registered;
     return $this;
   }
@@ -57,7 +57,7 @@ class Operation
     return $this->label;
   }
 
-  public function setAccountId(int $account_id):self {
+  public function setAccountId(int $account_id = null):self {
     $this->account_id = $account_id;
     return $this;
   }
