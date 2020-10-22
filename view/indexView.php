@@ -13,10 +13,10 @@ require 'view/template/header.php';
             <?=$accounts_user[$i]->getAccountType()?>
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">Votre solde : <?=$accounts_user[$i]->getAmountA()?></li>
+            <li class="list-group-item">Votre solde : <?=$accounts_user[$i]->getAmountA()?> euro</li>
             <li class="list-group-item">Ouvert le : <?=$accounts_user[$i]->getOpeningDate()?></li>
             <li class="list-group-item">Dernière transaction : <?=$account_last_operation[$i]->getOperationType()?></li>
-            <li class="list-group-item">Montant : <?=$account_last_operation[$i]->getAmountO()?></li>
+            <li class="list-group-item">Montant : <?=$account_last_operation[$i]->getAmountO()?> euro</li>
             <li class="list-group-item">Enregistré le : <?=$account_last_operation[$i]->getRegistered()?></li>
             <li class="list-group-item">Label : <?=$account_last_operation[$i]->getLabel()?></li>
           </ul>
@@ -39,7 +39,7 @@ require 'view/template/header.php';
           </div>
         </div>
       <?php endif; ?>
-    <?php endfor; ?>    
+    <?php endfor; ?>
   </div>
 </div>
 

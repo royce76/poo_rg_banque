@@ -27,9 +27,7 @@ class Account
   }
 
   public function setAmountA(float $amountA):self {
-    if ($amountA >= 50) {
-      $this->amountA = $amountA;
-    }
+    $this->amountA = $amountA;
     return $this;
   }
 
