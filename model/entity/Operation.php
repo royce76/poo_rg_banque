@@ -7,7 +7,7 @@ class Operation
 {
   protected int $id;
   protected ?string $operation_type;
-  protected float $amount;
+  protected ?float $amountO;
   protected ?string $registered;
   protected ?string $label;
   protected ?int $account_id;
@@ -30,7 +30,7 @@ class Operation
     return $this->operation_type;
   }
 
-  public function setAmountO(float $amountO):self {
+  public function setAmountO(float $amountO = null):self {
     $this->amountO = $amountO;
     return $this;
   }

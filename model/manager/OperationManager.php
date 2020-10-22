@@ -17,9 +17,9 @@ class OperationManager
   }
 
   //use to show all operations from the account'user in showaccount.php
-  public function showOperations(){
+  public function listOperations(){
     $query = $this->getDb()->prepare(
-      "SELECT o.operation_type, o.amount AS amountO, o.registered, o.label
+      "SELECT o.operation_type, o.amount AS amountO, o.registered, o.label, o.account_id
       FROM Account AS a
       INNER JOIN Operation AS o
       WHERE a.id = o.account_id AND a.id = :account_id"
@@ -52,6 +52,20 @@ class OperationManager
 
   $account_last_operation = $query->fetchAll(PDO::FETCH_CLASS, "Operation");
   return $account_last_operation;
+  }
+
+  public function addOperation(Operation $operation) {
+    $query = $this->getDb()->prepare(
+      "INSERT INTO Operation (operation_type, amount, registered, label, account_id)
+      VALUES (:operation_type, :amount, NOW(), :label, :account_id)"
+    );
+    $result = $query->execute([
+      "operation_type" => $operation->getOperationType(),
+      "amount" => $operation->getAmountO(),
+      "label" => $operation->getLabel(),
+      "account_id" => $_SESSION["account_mouvement_id"]
+    ]);
+    return TRUE;
   }
 
 }

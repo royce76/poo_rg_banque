@@ -16,7 +16,7 @@ require 'model/entity/Account.php';
 require 'model/manager/AccountManager.php';
 
 $account_manager = new AccountManager();
-$accounts_user = $account_manager->showAccounts();
+$accounts_user = $account_manager->listAccounts();
 
 //on récupère la liste des comptes de user
 $account_user = [];
@@ -36,7 +36,6 @@ $account_less_userAc = array_diff($ACCOUNT_TYPE,$account_user);
 
 $error_entries = "";
 $empty_entries = "";
-$message = "";
 $error_account = "";
 $error_amount = "";
 if (isset($_POST["valider"]) && !empty($_POST["valider"])) {
@@ -49,7 +48,6 @@ if (isset($_POST["valider"]) && !empty($_POST["valider"])) {
       if ($new_account) {
         $add_account = $account_manager->addAccount($new_account);
         if ($add_account) {
-          $_SESSION["message"] = "Bravo votre nouveau compte a été ajouté.";
           header("Location: index.php");
           exit();
         }
