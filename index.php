@@ -17,6 +17,6 @@ $account_last_operation = $operation_manager->AccountLastOperation();
 
 //on récupère les comptes
 $account_manager = new AccountManager();
-$accounts_user = $account_manager->showAccounts();
+$accounts_user = $account_manager->listAccounts();
 
 require 'view/indexView.php';

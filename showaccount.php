@@ -8,7 +8,7 @@ require 'model/entity/Operation.php';
 require 'model/manager/OperationManager.php';
 
 $operations = new OperationManager();
-$show_operations = $operations->showOperations();
+$show_operations = $operations->listOperations();
 
 $account = new AccountManager();
 $show_account_single = $account->accountSingle();
