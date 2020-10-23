@@ -1,0 +1,17 @@
+{
+    "Taux Emprunt" : {
+        "Immobilier" : "1.10%",
+        "Voiture" : "0.5%",
+        "Consommation" : "0.9%"
+    },
+    "Cours de la Bourse" : {
+        "CAC 40" : "+ 0.02%",
+        "Dow jones" : "+ 0.57%",
+        "Nasdaq" : "- 0.34%"
+    },
+    "Cours de la monnaie" : {
+        "EUR/USD" : "1.1911$",
+        "Brent" : "44.95$",
+        "Or" : "1955.45$"
+    }
+}

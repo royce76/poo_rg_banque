@@ -14,17 +14,18 @@ require 'model/manager/AccountManager.php';
 require 'model/entity/Operation.php';
 require 'model/manager/OperationManager.php';
 
-//on récupère les comptes
+//accounts are recovered
 $account_manager = new AccountManager();
 $accounts_user = $account_manager->listAccounts();
 $operation_manager = new OperationManager();
 
+//initials variables
 $error_entries = "";
 $empty_entries = "";
-$error_account = "";
+$error_issuer = "";
 $error_amount = "";
 $error_label = "";
-$error_mouvement = "";
+$error_beneficiary = "";
 $message = "";
 $issuer_array = ["virement émis"];
 $beneficiary_array = ["virement reçu"];
@@ -97,6 +98,27 @@ if (isset($_POST["valider"]) && !empty($_POST["valider"])) {
   }
   else {
     $empty_entries = "Vous avez oublié de remplir tous les champs.";
+  }
+}
+
+if (isset($_POST["valider"]) && !empty($_POST["valider"])) {
+  if (empty($_POST["compte_emetteur"])) {
+    $error_issuer = "*Champs à renseigner.";
+  }
+  if (empty($_POST["amountO"])) {
+    $error_amount = "*Champs à renseigner.";
+  }
+  if (empty($_POST["label"])) {
+    $error_label = "*Champs à renseigner.";
+  }
+  if (strlen($_POST["label"]) > 50) {
+    $error_label = "*Maxi 50 caractères.";
+  }
+  if (empty($_POST["compte_beneficiaire"])) {
+    $error_beneficiary = "*Champs à renseigner.";
+  }
+  if ($_POST["amountO"] < 20) {
+    $error_amount = "*Montant non valide.";
   }
 }
 
