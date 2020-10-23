@@ -10,13 +10,14 @@
 <html class="no-js" lang="fr">
   <head>
     <meta charset="utf-8">
-    <title>rgbanque</title>
+    <title><?=$title?></title>
     <meta name="description" content="Application bancaire avec ouverture de compte.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!--link own css-->
-    <link rel="stylesheet" href="css/moncss.css">
-    <!-- <link rel="stylesheet" href="css/normalize.css"> -->
+    <link rel="stylesheet" href="public/css/moncss.css">
+    <link rel="stylesheet" href="public/css/normalize.css">
+    <link rel="stylesheet" href="public/css/main.css">
 
     <!--link bootstrap4-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -40,17 +41,11 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="compteDropDown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Compte
+              Ajouter/Supprimer Compte
             </a>
             <div class="dropdown-menu" aria-labelledby="compteDropDown">
-              <a class="dropdown-item" href="currentAccount.php">Compte courant</a>
-              <a class="dropdown-item" href="livretA.php">Livret A</a>
-              <a class="dropdown-item" href="pel.php">PEL</a>
-              <a class="dropdown-item" href="livretJeune.php">Livret Jeune</a>
-              <a class="dropdown-item" href="perp.php">PERP</a>
-              <a class="dropdown-item" href="lep.php">LEP</a>
-              <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="form.php">Créer un compte</a>
+              <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="delete.php">Supprimer un compte</a>
             </div>
           </li>

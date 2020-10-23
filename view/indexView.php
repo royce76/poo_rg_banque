@@ -42,7 +42,7 @@ require 'view/template/header.php';
     <?php endfor; ?>
   </div>
 </div>
-
+<script src="public/js/main.js"></script>
 <?php
 require 'view/template/footer.php';
 ?>

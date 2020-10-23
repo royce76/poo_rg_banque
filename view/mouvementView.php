@@ -9,7 +9,7 @@ require 'view/template/header.php';
       <div class="form-group">
         <label for="accountType">Votre compte :</label>
         <select class="form-control" id="accountType" name="accountType">
-          <option value="">--Choisissez votre de compte--</option>
+          <option value="">--Choisissez votre compte--</option>
           <?php foreach ($accounts_user as $key => $account): ?>
                 <option value=<?=$account->getAccountType()?>><?=$account->getAccountType()?></option>
           <?php endforeach; ?>
@@ -31,7 +31,7 @@ require 'view/template/header.php';
         <small><?=$error_amount?></small>
       </div>
       <div class="form-group">
-        <label for="label">Example label : max 50 caractères</label>
+        <label for="label">Label : max 50 caractères</label>
         <input type="text" class="form-control" id="label" placeholder="label..." name="label">
         <small><?=$error_label?></small>
       </div>
