@@ -5,7 +5,7 @@ require 'view/template/header.php';
 
 <div class="container">
   <div class="row">
-    <form action="" method="POST" class="col-10 mx-auto">
+    <form action="" method="POST" class="col-10 mx-auto my-4">
       <div class="form-group">
         <label for="accountType">Votre compte :</label>
         <select class="form-control" id="accountType" name="accountType">
