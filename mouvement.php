@@ -1,5 +1,9 @@
 <?php
 session_start();
+if (!isset($_SESSION["user_info"]) && empty($_SESSION["user_info"])) {
+  header("Location: userConnection.php");
+  exit();
+}
 function test_input($data) {
   $data = trim($data); // remove space of both side
   $data = stripslashes($data);// remove backslashes
