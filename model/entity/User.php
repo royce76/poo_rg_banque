@@ -1,22 +1,20 @@
 <?php
-/**
- *
- */
+
 class User
 {
   // le sexe est une constante
   const SEX = ["h", "f"];
   //on récupère les champs de la table user en propritété
   protected int $id;
-  protected string $lastname;
-  protected string $firstname;
-  protected string $email;
-  protected string $city;
-  protected int $city_code;
-  protected string $adress;
+  protected ?string $lastname;
+  protected ?string $firstname;
+  protected ?string $email;
+  protected ?string $city;
+  protected ?int $city_code;
+  protected ?string $adress;
   protected string $sex;
-  protected string $password;
-  protected string $birth_date;
+  protected ?string $password;
+  protected ?string $birth_date;
 
   public function setId(int $id):self {
     $this->id = $id;
@@ -27,8 +25,10 @@ class User
     return $this->id;
   }
 
-  public function setLastname(string $lastname):self {
-    $this->lastname = $lastname;
+  public function setLastname(string $lastname = null):self {
+    if (preg_match("/^[a-zA-Z-' ]{2,50}$/",$lastname)) {
+      $this->lastname = $lastname;
+    }
     return $this;
   }
 
@@ -36,8 +36,10 @@ class User
     return $this->lastname;
   }
 
-  public function setfirstname(string $firstname):self {
-    $this->firstname = $firstname;
+  public function setfirstname(string $firstname = null):self {
+    if (preg_match("/^[a-zA-Z-' ]{2,50}$/",$firstname)) {
+      $this->firstname = $firstname;
+    }
     return $this;
   }
 
@@ -45,8 +47,10 @@ class User
     return $this->firstname;
   }
 
-  public function setEmail(string $email):self {
-    $this->email = $email;
+  public function setEmail(string $email = null):self {
+    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $this->email = $email;
+    }
     return $this;
   }
 
@@ -54,8 +58,10 @@ class User
     return $this->email;
   }
 
-  public function setCity(string $city):self {
-    $this->city = $city_code;
+  public function setCity(string $city = null):self {
+    if (preg_match("/^[a-zA-Z-' ]{2,30}$/",$city)) {
+      $this->city = $city;
+    }
     return $this;
   }
 
@@ -63,8 +69,10 @@ class User
     return $this->city;
   }
 
-  public function setCityCode(int $city_code):self {
-    $this->city_code = $city_code;
+  public function setCityCode(int $city_code = null):self {
+    if (preg_match("/^[0-9]{0,5}$/",$city_code)) {
+      $this->city_code = $city_code;
+    }
     return $this;
   }
 
@@ -72,8 +80,10 @@ class User
     return $this->city_code;
   }
 
-  public function setAdress(string $adress):self {
-    $this->adress = $adress;
+  public function setAdress(string $adress = null):self {
+    if (preg_match("/[0-9a-zA-Z-' ]{2,50}/",$adress)) {
+      $this->adress = $adress;
+    }
     return $this;
   }
 
@@ -81,8 +91,10 @@ class User
     return $this->adress;
   }
 
-  public function setPassword(string $password):self {
-    $this->password = $password;
+  public function setPassword(string $password = null):self {
+    if (preg_match("/.{2,255}/",$password)) {
+      $this->password = $password;
+    }
     return $this;
   }
 
@@ -101,7 +113,7 @@ class User
     return $this->sex;
   }
 
-  public function setBirthDate(string $birth_date):self {
+  public function setBirthDate(string $birth_date = null):self {
     $this->birth_date = $birth_date;
     return $this;
   }

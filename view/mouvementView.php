@@ -27,7 +27,7 @@ require 'view/template/header.php';
       </div>
       <div class="form-group">
         <label for="amountO">Montant (Minimum 20 euro) :</label>
-        <input type="number" class="form-control" id="amountO" name="amountO" required>
+        <input type="number" class="form-control" id="amountO" name="amountO">
         <small><?=$error_amount?></small>
       </div>
       <div class="form-group">
@@ -37,13 +37,13 @@ require 'view/template/header.php';
       </div>
       <button type="submit" class="btn btn-primary mb-2" name="valider" value="valider">Valider</button>
     </form>
-    <?php if ($message !== ""): ?>
+    <?php if ($response !== ""): ?>
       <div class="alert alert-success col-10 mx-auto text-center" role="alert">
-        <?=$message?>
+        <?=$response?>
         <a href="index.php" class="btn btn-primary mb-2">Retour</a>
       </div>
     <?php endif; ?>
-    <?php if ($error_entries !== ""): ?>
+    <?php if ($error_entries != ""): ?>
       <div class="alert alert-warning col-10 mx-auto text-center" role="alert">
         <?=$error_entries?>
       </div>
