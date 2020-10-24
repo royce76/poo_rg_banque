@@ -87,4 +87,16 @@ class AccountManager
     return TRUE;
   }
 
+  public function deleteAccount(Account $account) {
+    $query = $this->getDb()->prepare(
+      "DELETE FROM Account AS a
+      WHERE a.id = :a_id AND a.user_id = :user_id"
+    );
+    $result = $query->execute([
+      "user_id" => $account->getUserId(),
+      "a_id" => $account->getId()
+    ]);
+    return TRUE;
+  }
+
 }
