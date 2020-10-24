@@ -68,4 +68,15 @@ class OperationManager
     return TRUE;
   }
 
+  public function deleteOperation(Account $account) {
+    $query = $this->getDb()->prepare(
+      "DELETE FROM Operation AS o
+      WHERE o.account_id = :a_id"
+    );
+    $result = $query->execute([
+      "a_id" => $account->getId()
+    ]);
+    return TRUE;
+  }
+
 }
